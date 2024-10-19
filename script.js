@@ -15,8 +15,8 @@ const test = {
 const CUR = {
     d: 30,
     c: 20,
-    a: 150,
-    b: 55
+    a: 50,
+    b: 30
 }
 let inp = {
     lang: {
@@ -377,10 +377,6 @@ if (ThisDevice === "PC") {
     let startX, startY;
 
     // CUR obyektini aniqlash (threshold)
-    const CUR = {
-        a: 30, // X yo'nalishi bo'yicha minimal masofa
-        b: 30  // Y yo'nalishi bo'yicha minimal masofa
-    };
 
     // Touch start hodisasi - dastlabki koordinatalarni olish
     cards_box.addEventListener('touchstart', (event) => {
@@ -399,10 +395,10 @@ if (ThisDevice === "PC") {
         if (Math.abs(deltaX) > CUR.a && Math.abs(deltaY) < CUR.b) {
             if (deltaX > 0) {
                 // O'ngga surildi
-                slideFlashcard("r");
+                slideFlashcard("l");
             } else {
                 // Chapga surildi
-                slideFlashcard("l");
+                slideFlashcard("r");
             }
         }
 
@@ -420,7 +416,7 @@ if (ThisDevice === "PC") {
 
 
 }
-alert("v_13")
+
 function Aylan() {
     const flashcard = document.getElementById('flashcard');
     flashcard.classList.toggle('flipped'); // "flipped" klassini qo'shadi yoki olib tashlaydi
